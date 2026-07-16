@@ -14,7 +14,7 @@ public class UserServiceImpl implements UserService {
 
     private void validateId(Long id) {
         if (id == null || id <= 0) {
-            throw new IllegalArgumentException("Invalid id");
+            throw new IllegalArgumentException("Неверный Id");
         }
     }
 
@@ -29,7 +29,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findById(Long id) {
         validateId(id);
-        return userDao.findById(id);
+        User user = userDao.findById(id);
+        if (user == null) {
+            throw new IllegalArgumentException("Пользователь не найден");
+        }
+        return user;
     }
 
     @Override

@@ -66,12 +66,10 @@ public class ConsoleMenu {
         try {
             System.out.print("Введите ID: ");
             Long id = Long.parseLong(sc.nextLine());
+
             User user = userService.findById(id);
-            if (user != null) {
-                System.out.println(user);
-            } else {
-                System.out.println("Пользователь не найден");
-            }
+            System.out.println(user);
+
         } catch (NumberFormatException e) {
             System.out.println("ID должен быть числом");
         } catch (IllegalArgumentException e) {
