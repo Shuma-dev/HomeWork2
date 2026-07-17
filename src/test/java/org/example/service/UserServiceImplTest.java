@@ -1,8 +1,7 @@
-package test_Service;
+package org.example.service;
 
 import org.example.dao.UserDao;
 import org.example.entity.User;
-import org.example.service.UserServiceImpl;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

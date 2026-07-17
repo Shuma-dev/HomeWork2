@@ -8,7 +8,7 @@ import org.example.util.HibernateUtil;
 
 public class Main {
     public static void main(String[] args) {
-        UserDaoImpl userDao = new UserDaoImpl();
+        UserDaoImpl userDao = new UserDaoImpl(HibernateUtil.getSessionFactory());
         UserService userService = new UserServiceImpl(userDao);
         ConsoleMenu consoleMenu = new ConsoleMenu(userService);
 
