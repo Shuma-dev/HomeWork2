@@ -2,6 +2,7 @@ package org.example.console;
 
 import org.example.entity.User;
 import org.example.service.UserService;
+
 import java.util.List;
 import java.util.Scanner;
 

@@ -1,4 +1,5 @@
 package org.example.entity;
+
 import jakarta.persistence.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -24,15 +25,16 @@ public class User {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
-    public User(String name, String email, Integer age){
+    public User(String name, String email, Integer age) {
         this.name = name;
         this.email = email;
         this.age = age;
     }
 
-    public User(){}
+    public User() {
+    }
 
-    public String getName(){
+    public String getName() {
         return name;
     }
 

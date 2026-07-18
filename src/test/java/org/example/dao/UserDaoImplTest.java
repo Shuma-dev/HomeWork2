@@ -105,7 +105,7 @@ public class UserDaoImplTest {
 
     @Test
     @DisplayName("Пользователь не найден")
-    public void findById_ShouldReturnNull_WhenUserNotFound(){
+    public void findById_ShouldReturnNull_WhenUserNotFound() {
         User foundUser = userDao.findById(999L);
         assertNull(foundUser);
     }
@@ -126,13 +126,13 @@ public class UserDaoImplTest {
 
         assertNotNull(users);
         assertEquals(2, users.size());
-        assertEquals("Denis",users.get(0).getName());
-        assertEquals("Ivan",users.get(1).getName());
+        assertEquals("Denis", users.get(0).getName());
+        assertEquals("Ivan", users.get(1).getName());
     }
 
     @Test
     @DisplayName("список пользователей пуст")
-    public void findAll_ShouldReturnEmptyList_WhenNoUsersExist(){
+    public void findAll_ShouldReturnEmptyList_WhenNoUsersExist() {
         List<User> users = userDao.findAll();
         assertTrue(users.isEmpty());
     }
@@ -174,7 +174,7 @@ public class UserDaoImplTest {
         userDao.save(user);
 
         userDao.delete(user.getId());
-        try(Session session = sessionFactory.openSession()){
+        try (Session session = sessionFactory.openSession()) {
             User deletedUser = session.find(User.class, user.getId());
             assertNull(deletedUser);
         }
